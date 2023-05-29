@@ -1,18 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 
 <head>
   <meta charset="utf-8" />
   <title>wc-fontawesome demo</title>
-  <style>
-    .color-red {
-      color: red;
-    }
-  </style>
 </head>
 
 <body>
-  <select id="select-icon">
+<label for="select-icon">Select Icon</label><select id="select-icon">
     <option value="spinner" selected>Spinner</option>
     <option value="check">Check</option>
     <option value="baby">Baby</option>
@@ -20,27 +15,44 @@
     <option value="ambulance">Ambulance</option>
     <option value="bars">Bars</option>
   </select>
-  <input type="checkbox" name="shadow" id="use-shadow" /> Use shadow DOM
+  <input type="checkbox" name="shadow" id="use-shadow" /><label for="use-shadow"> Use shadow DOM</label>
+  <input type="checkbox" name="regular" id="use-regular" /><label for="use-regular"> Use regular</label>
+  <input type="checkbox" name="brands" id="show-brands" /><label for="show-brands"> Show brands</label>
   <div id="container"></div>
   <script type="module">
     import './fa-icon-examples.js'
     import { library } from '@fortawesome/fontawesome-svg-core'
-    import { fas } from '@fortawesome/free-solid-svg-icons/index.es.js'
-    import { configure } from '../src/wc-fontawesome.js'
+    import { fab } from '@fortawesome/free-brands-svg-icons'
+    import { far } from '@fortawesome/free-regular-svg-icons'
+    import { fas } from '@fortawesome/free-solid-svg-icons'
+    import { configure } from '../src'
 
+    library.add(fab)
+    library.add(far)
     library.add(fas)
 
     const select = document.querySelector('#select-icon')
     const checkbox = document.querySelector('#use-shadow')
+    const regular = document.querySelector('#use-regular')
+    const brands = document.querySelector('#show-brands')
     const container = document.querySelector('#container')
 
     container.innerHTML =
-      '<fa-icon-examples icon="spinner"></fa-icon-examples icon="spinner">'
+      '<fa-icon-examples type="solid" icon="spinner"></fa-icon-examples>'
 
     let examples = container.children[0]
 
     select.onchange = (e) => {
       examples.icon = e.target.value
+    }
+    regular.onchange = (e) => {
+      brands.checked = false
+      examples.type = e.target.checked ? 'regular' : 'solid'
+    }
+    brands.onchange = () => {
+      regular.checked = false
+      examples.type = 'brands'
+      examples.icon = 'github'
     }
     checkbox.onchange = (e) => {
       const shadowDom = e.target.checked

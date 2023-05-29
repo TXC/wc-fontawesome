@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 
 <head>
   <meta charset="utf-8" />
@@ -8,6 +8,11 @@
 
 <body>
   <div class="fa-4x">
+    <span class="fa-layers fa-fw" style="background:MistyRose">
+      <i class="fas fa-square"></i>
+      <i class="fa-inverse fas fa-check" data-fa-transform="shrink-6"></i>
+    </span>
+
     <span class="fa-layers fa-fw" style="background:MistyRose">
       <i class="fas fa-circle" style="color:Tomato"></i>
       <i class="fa-inverse fas fa-times" data-fa-transform="shrink-6"></i>
@@ -42,9 +47,13 @@
     </span>
   </div>
   <script type="module">
-    import { library, dom, counter, text } from '@fortawesome/fontawesome-svg-core'
-    import { fas } from '@fortawesome/free-solid-svg-icons/index.es.js'
+    import { library, dom } from '@fortawesome/fontawesome-svg-core'
+    //import { fab } from '@fortawesome/free-brands-svg-icons'
+    //import { far } from '@fortawesome/free-regular-svg-icons'
+    import { fas } from '@fortawesome/free-solid-svg-icons'
 
+    //library.add(fab)
+    //library.add(far)
     library.add(fas)
 
     dom.watch()

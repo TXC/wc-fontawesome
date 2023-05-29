@@ -1,5 +1,11 @@
+import prefix from './prefix'
+
 // Normalize icon arguments
-export default function normalizeIconArgs(icon) {
+export default function normalizeIconArgs(icon, type, sharp) {
+  if (!type) {
+    type = 'solid'
+  }
+
   // if the icon is null, there's nothing to do
   if (icon === null) {
     return null
@@ -18,6 +24,6 @@ export default function normalizeIconArgs(icon) {
 
   // if it's a string, use it as the icon name
   if (typeof icon === 'string') {
-    return { prefix: 'fas', iconName: icon }
+    return { prefix: prefix(type, sharp), iconName: icon }
   }
 }

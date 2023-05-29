@@ -1,15 +1,21 @@
 {
-  "name": "wc-fontawesome",
+  "name": "wc-fontawesome-5",
   "version": "0.4.0",
-  "main": "src/wc-fontawesome.js",
+  "main": "src/index.js",
   "keywords": [
     "web components",
     "fontawesome",
     "svg",
     "icon"
   ],
-  "repository": "https://github.com/blikblum/wc-fontawesome.git",
-  "author": "Luiz Américo <luizamericop@gmail.com>",
+  "repository": "https://github.com/TXC/wc-fontawesome.git",
+  "author": "Jonas Marklén <txc@txc.se>",
+  "contributors": [
+    {
+      "name": "Luiz Américo",
+      "email": "luizamericop@gmail.com"
+    }
+  ],
   "license": "MIT",
   "scripts": {
     "start": "web-dev-server --open example/ --node-resolve",
@@ -18,16 +24,19 @@
     "test:watch": "web-test-runner test/**/*.test.js --node-resolve --watch"
   },
   "peerDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.25"
+    "@fortawesome/fontawesome-svg-core": "^6.x"
   },
   "dependencies": {
-    "raw-element": "^0.4.0"
+    "raw-element": "^0.4.1"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.31",
-    "@fortawesome/free-solid-svg-icons": "^5.15.0",
-    "@open-wc/testing": "^3.1.6",
-    "@web/dev-server": "^0.1.33",
-    "@web/test-runner": "^0.14.0"
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@open-wc/testing": "^3.1.8",
+    "@web/dev-server": "^0.2.1",
+    "@web/test-runner": "^0.16.1",
+    "lit-element": "^3.3.2"
   }
 }

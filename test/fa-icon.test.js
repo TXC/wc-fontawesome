@@ -1,7 +1,7 @@
 import './fontawesome-setup'
 import { html, fixture, expect, elementUpdated } from '@open-wc/testing'
 import { faCheck, faBaby } from '@fortawesome/free-solid-svg-icons'
-import { configure } from '../src/wc-fontawesome.js'
+import { configure } from '../src'
 
 describe('fa-icon', () => {
   beforeEach(() => {
@@ -9,7 +9,7 @@ describe('fa-icon', () => {
   })
 
   describe('shadow-dom', () => {
-    it('should be empty when icon is unknow', async () => {
+    it('should be empty when icon is unknown', async () => {
       const el = await fixture(html`<fa-icon icon="hoho"></fa-icon>`)
       expect(el).to.be.empty
     })
@@ -55,7 +55,7 @@ describe('fa-icon', () => {
       configure({ shadowDom: false })
     })
 
-    it('should be empty when icon is unknow', async () => {
+    it('should be empty when icon is unknown', async () => {
       const el = await fixture(html`<fa-icon icon="hoho"></fa-icon>`)
       expect(el).to.be.empty
     })

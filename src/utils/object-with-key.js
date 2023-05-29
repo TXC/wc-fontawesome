@@ -1,6 +1,9 @@
-// creates an object with a key of key
-// and a value of value
-// if certain conditions are met
+/**
+ * creates an object with a key of key
+ * and a value of value
+ * if certain conditions are met
+ * @return Array
+ */
 export default function objectWithKey(key, value) {
   // if the value is a non-empty array
   // or it's not an array but it is truthy
