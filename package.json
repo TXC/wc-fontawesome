@@ -1,6 +1,6 @@
 {
   "name": "wc-fontawesome-5",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "main": "src/index.js",
   "keywords": [
     "web components",
