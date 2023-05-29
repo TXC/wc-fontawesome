@@ -7,13 +7,13 @@ Web component integration with Font Awesome (v5)
 Libraries
 
 ```
-yarn add wc-fontawesome @fortawesome/fontawesome-svg-core
+yarn add wc-fontawesome-5 @fortawesome/fontawesome-svg-core
 ```
 
 Icons
 
 ```
-yarn add @fortawesome/free-regular-svg-icons @fortawesome/free-brands-svg-icons
+yarn add @fortawesome/free-regular-svg-icons @fortawesome/free-brands-svg-icons @fortawesome/free-solid-svg-icons
 ```
 
 ### Usage
@@ -35,13 +35,13 @@ library.add(faSpinner)
 
 #### Examples
 
-Look at the provided [example](example/index.html): clone repository, install dependencies and run npm `start` script or check the [live example](https://codesandbox.io/s/wc-fontawesome-example-s4lqs?file=/src/index.js).
+Look at the provided [example](example/index.html): clone repository, install dependencies and run npm `start` script.
 
 #### With shadow Dom
 
 Font Awesome is implemented using global styles which do not work in web components that renders in shadow Dom.
 
-To use `wc-fontawesome` along side shadow Dom is necessary to add the Font Awesome css in the component. See example below or check
+To use `wc-fontawesome-5` alongside shadow Dom is necessary to add the Font Awesome css in the component. See example below or check
 how can be done using LitElement [styling system](example/fa-icon-examples.js#L205).
 
 ```js
@@ -64,7 +64,7 @@ class ElementWithIcons extends HTMLElement {
 Alternatively, enable the usage of shadow Dom in `fa-icon` component. This will allow to use it in any web component with the drawback of breaking layers functionality:
 
 ```js
-import { configure } from 'wc-fontawesome'
+import { configure } from 'wc-fontawesome-5'
 
 configure({ shadowDom: true })
 ```
@@ -206,6 +206,8 @@ With counter
 
 ### Copyright
 
+2023 - Jonas Marklén
 2019 - Luiz Américo Pereira Câmara
 
+Forked from [wc-fontawesome](https://github.com/blikblum/wc-fontawesome)
 Ported from [react-fontawesome](https://github.com/FortAwesome/react-fontawesome)
